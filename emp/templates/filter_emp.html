@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+  Filter Employee Details!
+{% endblock %}
+
+
+
+{% block body %}
+  <hr />
+  <div class="container">
+    <h1>Filter Employee Details!</h1>
+    <form action="/filter_emp" method="post">
+      {% csrf_token %}
+      <label for="name">Employee First/Last Name word</label><br />
+      <input type="text" id="name" name="name" value="{{ name }}" /><br />
+      <hr />
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  </div>
+{% endblock %}

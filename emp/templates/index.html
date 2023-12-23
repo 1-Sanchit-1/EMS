@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+  Employ Management System
+{% endblock %}
+
+{% block logout %}
+  Logout
+{% endblock %}
+
+
+{% block body %}
+  <hr />
+  <div class="container">
+    <a class="btn btn-outline-primary" href="/all_emp" role="button">All Employes Details</a>
+    <a class="btn btn-outline-primary" href="/add_emp" role="button">Add Employes</a>
+    <a class="btn btn-outline-primary" href="/del_emp" role="button">Delete Employes</a>
+    <a class="btn btn-outline-primary" href="/filter_emp" role="button">Filter or search Employes</a>
+    <a class="btn btn-outline-primary" href="/update_emp" role="button">Update Employes</a>
+  </div>
+  <hr />
+{% endblock %}

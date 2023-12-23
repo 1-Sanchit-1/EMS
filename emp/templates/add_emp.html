@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+
+{% block heading %}
+  Add Employes!!
+{% endblock %}
+
+
+{% block body %}
+  <form action="/add_emp" method="post">
+    <hr />
+    {% csrf_token %}
+    <div class="container-fluid px-1 py-5 mx-auto">
+      <div class="row d-flex justify-content-center">
+        <div class="col-xl-7 col-lg-8 col-md-9 col-11 text-center">
+          <h3>Glams Private Limited</h3>
+          <p class="blue-text">
+            Welcome to Glams World !! <br /> Please add your Information !!
+          </p>
+          <div class="card">
+            <h5 class="text-center mb-4">Add Data</h5>
+            <form class="form-card" onsubmit="event.preventDefault()">
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label for="first_name">First Name</label><br />
+                  <input type="text" id="first_name" name="first_name" value="{{ first_name }}" /><br />
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label for="last_name">Last Name</label><br />
+                  <input type="text" id="last_name" name="last_name" value="{{ last_name }}" /><br />
+                </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  {% comment %} <label class="form-control-label px-3">Business email<span class="text-danger">*</span></label> <input type="text" id="email" name="email" placeholder="" onblur="validate(3)" /> {% endcomment %}
+                </div>
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  <label for="phone_number">Phone Number</label><br />
+                  <input type="number" id="phone_number" name="phone" value="{{ phone }}" /><br />
+                </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-sm-6 flex-column d-flex">
+                  {% comment %} <label class="form-control-label px-3">Job title<span class="text-danger">*</span></label> <input type="text" id="job" name="job" placeholder="" onblur="validate(5)" /> {% endcomment %}
+                </div>
+              </div>
+              <div class="row justify-content-between text-left">
+                <div class="form-group col-12 flex-column d-flex">
+                  {% comment %} <label class="form-control-label px-3">What would you be using Flinks for?<span class="text-danger">*</span></label> <input type="text" id="ans" name="ans" placeholder="" onblur="validate(6)" /> {% endcomment %}
+                </div>
+              </div>
+              <div class="row justify-content-end">
+                <div class="form-group col-sm-6">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+{% endblock %}

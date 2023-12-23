@@ -1,0 +1,91 @@
+Manage.py >>setting.py >> urls.py >> views.py  >> models.py >> templates 
+
+Command to create project 
+Django-admin startproject project_name  
+
+command to create app 
+Python manage.py startapp project_name
+
+Command to run project 
+Python manage.py runserver 
+
+Add your app in install app  (in manage.py )
+
+
+Set the paths in project urls 
+
+Urlpatterns{
+    path(‘ ’, include(project_name)) 
+}
+
+Create url.py in ur app and 
+From .import views 
+Urlpatterns{
+    path(‘ ’, view.index, name=index) 
+}
+
+Create ur functions on views 
+Def index(request )
+	Return render(request,’inde.html’) 
+
+
+Create Model in django : 
+Model.py:
+   Class Emp(models.Model):
+primary_key=models.Autofield()
+     Name = models.charfield(max_length=100) 
+
+ForeignKey
+   	Class St(models.Model):
+ 		fk=models.ForeignKey(modelname, on_deletion=models.CASCADE)
+  We can access the model1 elements
+
+
+What is the command for migration in django 
+
+Command to create file in a migration folder 
+Python manage.py makemigration 
+
+To reflect change in database 
+Python manage.py migrate 	
+
+To see all migration executing command  
+Python mange.py show migration 
+
+
+Register your model in admin 
+admin.site.register(models name) (do not forget import ur models)
+
+
+For access admin to create super user 
+Python mange.py createsuperuser
+
+For displaying the models names in admin 
+
+Def __str__(self)
+     Return self.name 
+Return “%s %s” %(self.name , self.name)
+
+How to views all items in the model using query sets 
+	model_name.objects.all() 
+
+What is context in django : variable value mapping that pass through templates
+
+context={ dir:’dir’ }
+Return (request, page_name, context)
+
+When taking the input use token {% csrf_token %} 
+
+Add object to model 
+new_user= User(name=’’ , city=’’) 
+new_user.save() 
+
+
+
+
+
+
+
+
+
+
